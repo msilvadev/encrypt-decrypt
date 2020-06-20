@@ -12,8 +12,6 @@ export class EncryptDecryptComponent {
 
   dataToEncrypt: string;
   dataText: string;
-  encPassword: string;
-  decPassword: string;
   conversionEncryptOutput: string;
   conversionDecryptOutput: string;
 
@@ -27,16 +25,10 @@ export class EncryptDecryptComponent {
   convertText(encryptOrDecrypt: string) {
     if (encryptOrDecrypt == "encrypt") {
       this.conversionEncryptOutput = CryptoJS.AES.encrypt(this.dataToEncrypt, this.key, { iv: this.iv });
-  
-      // this.conversionEncryptOutput = CryptoJS.AES.encrypt(this.dataToEncrypt.trim(), this.encPassword.trim()).toString();
     }
     else {
-      console.log(this.dataText)
-      console.log(this.conversionDecryptOutput = 
-        CryptoJS.AES.decrypt(this.dataText, this.key, { iv: this.iv }).toString(CryptoJS.enc.Utf8)
-      );
-      // this.conversionDecryptOutput = CryptoJS.AES.decrypt(this.dataText.trim(), this.decPassword.trim()).toString(CryptoJS.enc.Utf8);
+      this.conversionDecryptOutput =
+        CryptoJS.AES.decrypt(this.dataText, this.key, { iv: this.iv }).toString(CryptoJS.enc.Utf8);
     }
   }
-
 }
