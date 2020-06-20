@@ -9,3 +9,7 @@ if (conversion == "encrypt") {
   this.decPassword.trim()).toString(CryptoJS.enc.Utf8);
 }
 ```
+_To use CryptoJS.AES.encrypt() function in your project, you **need** to install this dependency_
+```Crypto-js dependency
+npm i crypto-js --save
+```
