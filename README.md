@@ -7,5 +7,5 @@ if (conversion == "encrypt") {
 } else {
   this.conversionDecryptOutput = CryptoJS.AES.decrypt(this.encryptText.trim(),    
   this.decPassword.trim()).toString(CryptoJS.enc.Utf8);
-    }
+}
 ```
