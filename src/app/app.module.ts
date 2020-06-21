@@ -16,7 +16,6 @@ import { HeaderComponent } from './header/header.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

@@ -1,0 +1,8 @@
+{
+  "NAMEPROJECT": {
+    "NAMEPROJECT": "Encrypt and Decrypt Project"  
+  },
+  "HOME": {
+      "HELLO": "hello {{value}}"
+  }
+}
