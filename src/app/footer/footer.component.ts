@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,10 +7,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
+  @Input() language: string;
+  
   constructor(translate: TranslateService) {
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use('en');
+    translate.use('pt-br');
   }
 
   ngOnInit(): void {

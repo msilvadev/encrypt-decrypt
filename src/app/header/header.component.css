@@ -1,0 +1,10 @@
+.flex
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.row {
+  flex: 0 1 100%;
+}
