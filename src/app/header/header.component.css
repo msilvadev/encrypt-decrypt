@@ -1,10 +1,4 @@
-.flex
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
 
-.row {
-  flex: 0 1 100%;
+/deep/ .mat-form-field-type-mat-select .mat-form-field-label, .mat-select-value {
+  color: whitesmoke;
 }
