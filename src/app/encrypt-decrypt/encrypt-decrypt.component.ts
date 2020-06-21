@@ -15,20 +15,18 @@ export class EncryptDecryptComponent {
   conversionEncryptOutput: string;
   conversionDecryptOutput: string;
 
-  key = CryptoJS.enc.Base64.parse(environment.encryptKey);
-  //key is now e8b7b40e031300000000da247441226a, length=32
-  iv = CryptoJS.enc.Base64.parse(environment.encryptIv);
-  //iv is now 987185c4436764b6e27a72f2fffffffd, length=32
+  private _key = CryptoJS.enc.Base64.parse(environment.encryptKey);
+  private _iv = CryptoJS.enc.Base64.parse(environment.encryptIv);
 
   constructor() { }
 
   convertText(encryptOrDecrypt: string) {
     if (encryptOrDecrypt == "encrypt") {
-      this.conversionEncryptOutput = CryptoJS.AES.encrypt(this.dataToEncrypt, this.key, { iv: this.iv });
+      this.conversionEncryptOutput = CryptoJS.AES.encrypt(this.dataToEncrypt, this._key, { iv: this._iv });
     }
     else {
       this.conversionDecryptOutput =
-        CryptoJS.AES.decrypt(this.dataText, this.key, { iv: this.iv }).toString(CryptoJS.enc.Utf8);
+        CryptoJS.AES.decrypt(this.dataText, this._key, { iv: this._iv }).toString(CryptoJS.enc.Utf8);
     }
   }
 }
